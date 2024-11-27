@@ -12,11 +12,9 @@ three points are described as "love", "fifteen", "thirty", and "forty" respectiv
 4. If at least three points have been scored by each side and a player has one more point than his opponent,
  the score of the game is "advantage" for the player in the lead.
 
+when a player reaches more than 4 points with at least two point lead
+
 1. Tidy up the code
 2. Take notes (to give feedback on Starting version of the code)
 3. Take notes (to explain your improvements)
 4. There is a deliberate error in several of the implementations
-
-tennis1.py
-    def won_point():
-        hardcoded 'played1' must be abstact

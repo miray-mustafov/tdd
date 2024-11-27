@@ -6,7 +6,7 @@ class TennisGame2:
         self.p2points = 0
 
     def won_point(self, player_name):
-        if player_name == self.player1_name:
+        if player_name == "player1":
             self.p1_score()
         else:
             self.p2_score()
@@ -75,24 +75,26 @@ class TennisGame2:
             result = "Advantage player2"
 
         if (
-            self.p1points >= 4
-            and self.p2points >= 0
-            and (self.p1points - self.p2points) >= 2
+                self.p1points >= 4
+                and self.p2points >= 0
+                and (self.p1points - self.p2points) >= 2
         ):
             result = "Win for player1"
         if (
-            self.p2points >= 4
-            and self.p1points >= 0
-            and (self.p2points - self.p1points) >= 2
+                self.p2points >= 4
+                and self.p1points >= 0
+                and (self.p2points - self.p1points) >= 2
         ):
             result = "Win for player2"
         return result
 
     def set_p1_score(self, number):
-        self.p1points = number
+        for i in range(number):  # todo: just set it why loop ?
+            self.p1_score()
 
     def set_p2_score(self, number):
-        self.p2points = number
+        for i in range(number):
+            self.p2_score()
 
     def p1_score(self):
         self.p1points += 1

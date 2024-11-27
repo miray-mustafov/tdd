@@ -83,6 +83,10 @@ class TestTennis(unittest.TestCase):
                     game.score(),
                 )
 
+    # def test_won_point_raises_error_when_wrong_name_passed(self):
+    #     game = TennisGame1("player1", "player2")
+    #     with self.assertRaises(Exception):
+    #         game.won_point("random")
 
 if __name__ == "__main__":
     unittest.main()
