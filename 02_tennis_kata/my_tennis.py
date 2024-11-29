@@ -3,11 +3,6 @@
 #         self.name = name
 #         self.points = points
 
-""" Note
- todo: When both players get over 3 points there can't be difference >=2 but the tests simulate such behavior
-    that's why the dictionary solution below with the Advantages won't make the tests pass despite being logical
-"""
-
 class MyTennisGame:
     POINTS_NAMES = {
         0: "Love",
@@ -39,10 +34,11 @@ class MyTennisGame:
             return self.EQUAL_POINTS_NAMES.get(self.p1points, "Deuce")
         elif self.p1points >= 4 or self.p2points >= 4:
             subtraction = self.p1points - self.p2points
-            return {
-                1: f"Advantage {self.player1_name}",
-                -1: f"Advantage {self.player2_name}",
-                2: f"Win for {self.player1_name}",
-            }.get(subtraction, f"Win for {self.player2_name}")
+            #todo: that is not solution bcs 4-1,etc possible
+            # return {
+            #     1: f"Advantage {self.player1_name}",
+            #     -1: f"Advantage {self.player2_name}",
+            #     2: f"Win for {self.player1_name}",
+            # }.get(subtraction, f"Win for {self.player2_name}")
 
         return self.POINTS_NAMES[self.p1points] + '-' + self.POINTS_NAMES[self.p2points]
