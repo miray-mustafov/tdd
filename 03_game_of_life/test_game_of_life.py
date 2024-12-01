@@ -165,3 +165,25 @@ class TestGameOfLife(unittest.TestCase):
         actual = gol.grid
 
         self.assertEqual(actual, expected)
+
+    def test_the_stable_pattern_in_many_iterations(self):
+        expected = [
+            [0, 0, 0, 0, 0],
+            [0, 0, 1, 1, 0],
+            [0, 0, 1, 1, 0],
+            [0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0],
+        ]
+
+        grid = [
+            [0, 0, 0, 0, 0],
+            [0, 0, 1, 1, 0],
+            [0, 0, 1, 1, 0],
+            [0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0],
+        ]
+        gol = GameOfLife(grid)
+        gol.run(3)
+        actual = gol.grid
+
+        self.assertEqual(actual, expected)
