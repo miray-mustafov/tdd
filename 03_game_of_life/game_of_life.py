@@ -10,13 +10,13 @@ class GameOfLife:
     MAX_NEIGHBOURS_TO_STAY_ALIVE = 3
 
     def __init__(self, grid=None):
-        # todo: _validate_externally_provided_grid first ?
         self.grid = grid or self._generate_grid()
 
     def run(self, iterations=1):
         """
         state of the grid cannot be calculated in O1 time based on number of
         iterations because not mathematically possible, that's why loop needed
+        Complexity: # O(iterations * n^2)
         """
         for _ in range(iterations):
             old_grid = deepcopy(self.grid)
